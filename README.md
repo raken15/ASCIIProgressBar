@@ -27,7 +27,7 @@ Done!
 ## Installation & Setup
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/your-username/ASCIIProgressBar.git
+   git clone https://github.com/raken15/ASCIIProgressBar.git
    cd ASCIIProgressBar
    ```
 
@@ -36,36 +36,6 @@ Done!
    cd ASCIIProgressBarApp
    dotnet run
    ```
-
-## Code Overview
-```csharp
-using System;
-using System.Threading;
-
-class Program
-{
-    static void Main()
-    {
-        Console.Write("Enter a string to display in the progress bar: ");
-        string inputString = Console.ReadLine() ?? "";
-        int total = inputString.Length;
-
-        Console.WriteLine("\nLoading...");
-
-        for (int i = 0; i <= total; i++)
-        {
-            Console.Write("\r[");
-            Console.Write(inputString.Substring(0, i));
-            Console.Write(new string('-', total - i));
-            Console.Write($"] {i * 100 / total}%");
-
-            Thread.Sleep(200);
-        }
-
-        Console.WriteLine("\nDone!");
-    }
-}
-```
 
 ## Contributing
 Feel free to submit issues or pull requests to improve this project.
